@@ -12,24 +12,25 @@ function createLibrary(name) {
   return library;
 }
 
-//TODO FUNCTION addBook
+// FUNCTION addBook
 function addBook(library, book) {
-  //add a book to the fantasy shelf
-  //add to the shelves array inside the library object
-  //library.shelves.fantasy.push() to index [0]
-  //add to correct shelf automatically - conditional statement?
-  return library.shelves.fantasy.push(book);
+  var genre = book.genre;
+  return library.shelves[genre].push(book);
 }
+//add a book to the fantasy shelf
+//add to the shelves array inside the library object
+//library.shelves.fantasy.push() to index [0]
+//add genre to the library object
+//use .push() method to add the books correct shelf array
 
 //TODO FUNCTION checkoutBook
-function checkoutBook() {}
 
 //TODO FUNCTION takeStock
-function takeStock() {}
+// function takeStock() {}
 
 module.exports = {
   createLibrary,
   addBook,
-  checkoutBook,
-  takeStock,
+  //checkoutBook,
+  //takeStock,
 };
