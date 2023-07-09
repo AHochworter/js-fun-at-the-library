@@ -3,12 +3,12 @@
 function shelfBook(book, shelf) {
   //add books to a specific shelf
   //book and shelf parameters - shelf gives us the "empty bucket" for sciFi and book gives us the "empty bucket" for the incoming book object
-  shelf.unshift(book);
 
-  if (shelf.length > 3) {
-    shelf.pop();
+  if (shelf.length < 3) {
+    shelf.unshift(book);
+  } else {
+    return shelf;
   }
-  return shelf;
 }
 
 // FUNCTION unshelfBook
@@ -38,7 +38,7 @@ function listTitles(shelf) {
   //uses a method .join() to concatenate the titles
 }
 
-//TODO FUNCTION searchShelf
+// FUNCTION searchShelf
 function searchShelf(shelf, title) {
   // Check if the title is on the shelf
   for (var i = 0; i < shelf.length; i++) {
