@@ -4,6 +4,8 @@ function createTitle(title, modTitle) {
   // return "The Storm's Awakening";
 }
 //  FUNCTION buildMainCharacter
+//parameters = name, age, pronouns (found in each book variable)
+//return character
 function buildMainCharacter(name, age, pronouns) {
   var character = {
     name: name,
@@ -30,7 +32,7 @@ function calculatePageCount(title) {
   var titleCount = title.length * 20;
   // console.log(title.length, titleCount);
   return titleCount;
-  //parameter of a title
+  //parameter of  title
   //count the letters in the title - string length
   //multiply that count by 20
 }

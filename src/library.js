@@ -49,22 +49,20 @@ function checkoutBook(library, title, genre) {
 }
 
 //TODO FUNCTION takeStock
-//need to count the number of elements in each genre array .length
-//parameter library; library.name
-//parameter genre; library.shelves[genre]
-//save the array count for each genre and add them together? - for loop, save the answer?
+//shelves are an object inside of the library object - can't use a loop in shelves
+//.push() each array for each genre
 function takeStock(library, genre) {
   var shelves = library.shelves;
-  var books = shelves[genre];
+  var totalBooks = [];
 
-  if (genre === undefined) {
-    var totalBooks = [];
-    for (var i = 0; i < shelves.length; i++) {
-      totalBooks.push.apply(totalBooks, shelves[i]);
-    }
+  if (genre) {
+    return `There are a total of ${shelves[genre].length} ${genre} books at the ${library.name}.`;
+  } else {
+    totalBooks.push(shelves.fantasy);
+    totalBooks.push(shelves.fiction);
+    totalBooks.push(shelves.nonFiction);
     return `There are a total of ${totalBooks.length} books at the ${library.name}.`;
   }
-  return `There are a total of ${books.length} ${genre} books at the ${library.name}.`;
 }
 
 module.exports = {
